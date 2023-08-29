@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import "./App.css";
 
 // function App() {
 //   const [count, setCount] = useState(0)
@@ -33,13 +33,66 @@ import './App.css'
 
 // export default App
 
-import ListGroup from './components/ListGroup';
+// import ListGroup from "./components/ListGroup/index";
 
+// function App() {
+//   let items = ["New York", "SAn Francisco", "Tokyo", "London", "Paris"];
 
-function App()
-{
+//   const handleSelectItem = (item: string) => {
+//     console.log(item);
+//   };
+//   return (
+//     <div>
+//       <ListGroup
+//         items={items}
+//         heading="Cities"
+//         onSelectItem={handleSelectItem}
+//       />
+//     </div>
+//   );
+// }
+//export default App;
 
-  return <div><ListGroup/></div>
+import Alert from "./components/Alert";
+
+// function App() {
+//   return (
+//     <div>
+//       <Alert>Hello world</Alert>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// {alertVisible && (
+//   <Alert onClose={() => setAlertVisibility(false)}>Alert</Alert>
+// )}
+
+import Button from "./components/Button";
+
+// function App() {
+//   const [alertVisible, setAlertVisibility] = useState(false);
+
+//   return (
+//     <div>
+//       <like onClick={() => {}}>My button</like>
+//     </div>
+//   );
+// }
+
+//export default App;
+//<BsFillCalendarDateFill color="red" size="25" />
+
+import Like from "./components/like";
+import { BsFillCalendarDateFill } from "react-icons/bs";
+
+function App() {
+  return (
+    <div>
+      <Like />
+    </div>
+  );
 }
 
 export default App;
