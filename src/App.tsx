@@ -2,37 +2,6 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <div className="App">
-//       <div>
-//         <a href="https://vitejs.dev" target="_blank">
-//           <img src="/vite.svg" className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://reactjs.org" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.tsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </div>
-//   )
-// }
-
-// export default App
-
 // import ListGroup from "./components/ListGroup/index";
 
 // function App() {
@@ -70,6 +39,8 @@ import Alert from "./components/Alert";
 // )}
 
 import Button from "./components/Button";
+import NavBar from "./components/NavBar";
+import Cart from "./components/Cart";
 
 // function App() {
 //   const [alertVisible, setAlertVisibility] = useState(false);
@@ -84,13 +55,70 @@ import Button from "./components/Button";
 //export default App;
 //<BsFillCalendarDateFill color="red" size="25" />
 
-import Like from "./components/like";
-import { BsFillCalendarDateFill } from "react-icons/bs";
+// import Like from "./components/like";
+// import { BsFillCalendarDateFill } from "react-icons/bs";
+
+// function App() {
+//   return (
+//     <div>
+//       <Like />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// import Message from "./components/Message";
+
+// function App() {
+//   return (
+//     <div>
+//       <Message />
+//       <Message />
+//       <Message />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// function App() {
+//   const [bugs, setBugs] = useState([
+//     { id: 1, title: "Bug1", fixed: false },
+//     { id: 2, title: "Bug2", fixed: false },
+//   ]);
+
+//   const handleClick = () => {
+//     setBugs([...bugs, { id: 3, title: "bug3", fixed: false }]);
+//   };
+
+//   return (
+//     <div>
+//       <button onClick={handleClick}>click me</button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+import Form from "./components/ExpenseList/Form";
+import Expenselist from "./components/ExpenseList/Expenselist";
 
 function App() {
+  const [expenses, setExpenses] = useState([
+    { id: 1, decription: "aaa", amount: 10, category: "Utilites" },
+    { id: 2, decription: "bbb", amount: 10, category: "Utilites" },
+    { id: 3, decription: "ccc", amount: 10, category: "Utilites" },
+    { id: 4, decription: "ddd", amount: 10, category: "Utilites" },
+    { id: 5, decription: "eee", amount: 10, category: "Utilites" },
+  ]);
+
   return (
     <div>
-      <Like />
+      <Expenselist
+        expenses={expenses}
+        onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
+      />
     </div>
   );
 }
